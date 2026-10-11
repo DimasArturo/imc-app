@@ -11,15 +11,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(brightness: Brightness.light),
+      darkTheme: ThemeData(brightness: Brightness.dark),
+      themeMode: ThemeMode.system,
       home: Scaffold(
         appBar: AppBar(
           backgroundColor: AppColors.primary,
           foregroundColor: Colors.white,
-          title: Text("Imc Calculator")),
-        backgroundColor: AppColors.background,
-        body:ImcHomeScreen(),
+          title: Text("Imc Calculator"),
         ),
+        backgroundColor: AppColors.background,
+        body: ImcHomeScreen(),
+      ),
     );
   }
 }
